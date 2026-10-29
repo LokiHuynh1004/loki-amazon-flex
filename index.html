@@ -1,0 +1,510 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Amazon Flex Handbook: kinh nghiệm giao hàng thực tế tại DFW, Texas"><title>Loki — Amazon Flex Handbook</title><style>
+:root{color-scheme:light;--ink:#172338;--muted:#617084;--line:#e1e7f0;--blue:#2856a4}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5f7fb;color:var(--ink);font:16px/1.75 system-ui,-apple-system,Segoe UI,Arial,sans-serif}.hero{background:#172338;color:white;padding:42px max(24px,calc((100vw - 1180px)/2));}.hero h1{margin:0;font-size:clamp(26px,4vw,42px);line-height:1.2}.hero p{margin:12px 0 0;color:#cbd8e8}.layout{max-width:1180px;margin:28px auto;display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;padding:0 18px}.sidebar{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;background:white;border:1px solid var(--line);border-radius:14px;padding:18px}.sidebar strong{display:block;margin-bottom:10px}.sidebar a{display:block;color:#465a75;text-decoration:none;font-size:13px;padding:6px 3px;border-bottom:1px solid #f0f2f6}.sidebar a.l3{padding-left:14px}.sidebar a:hover{color:var(--blue)}article{min-width:0;background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(20px,4vw,52px);box-shadow:0 8px 32px #22345208}article h1{font-size:2em;line-height:1.25}article h2{margin-top:2.3em;border-top:1px solid var(--line);padding-top:1em;font-size:1.5em;line-height:1.3}article h3{margin-top:1.7em;font-size:1.17em}article h1,article h2,article h3{scroll-margin-top:20px}p,li{overflow-wrap:anywhere}li{margin:5px 0}a{color:var(--blue)}blockquote{border-left:4px solid #638acb;background:#f3f7ff;padding:8px 18px;margin:18px 0;border-radius:0 8px 8px 0}blockquote p{margin:8px 0}code{background:#edf2f8;padding:2px 5px;border-radius:4px}pre{overflow:auto;background:#edf2f8;padding:15px;border-radius:8px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--line);padding:9px 12px}hr{border:0;border-top:1px solid var(--line);margin:28px 0}@media(max-width:800px){.layout{display:block;margin:16px auto}.sidebar{position:static;max-height:240px;margin-bottom:16px}article{padding:22px}.hero{padding:28px 20px}}
+</style></head><body><header class="hero"><h1>Loki — Amazon Flex Handbook</h1><p>Kinh nghiệm thực tế tại Dallas–Fort Worth · VTX2 Carrollton · Bản 1.0</p></header><div class="layout"><nav class="sidebar" aria-label="Mục lục"><strong>Mục lục</strong><a class="l2" href="#section-1">1. Bối cảnh &amp;amp; cách đánh giá Flex</a><a class="l3" href="#section-2">Case thực tế</a><a class="l2" href="#section-3">2. Station gần nhà có lợi rất lớn</a><a class="l2" href="#section-4">3. Package count không nói hết route ngon/dở</a><a class="l3" href="#section-5">Pattern VTX2 đang theo dõi — CHƯA phải rule</a><a class="l2" href="#section-6">4. Apartment phải chia loại</a><a class="l3" href="#section-7">Loại tương đối dễ</a><a class="l3" href="#section-8">Loại khó</a><a class="l2" href="#section-9">5. Geofence / pin sai ở apartment</a><a class="l2" href="#section-10">6. Sort packages — quá trình học được sau nhiều route</a><a class="l3" href="#section-11">Cách 1: AAA / BBB / CCC / DDD</a><a class="l3" href="#section-12">Cách 2: Scan và ghi stop number lên từng package</a><a class="l3" href="#section-13">Quan điểm sau khi chạy thêm: scan-all đáng làm</a><a class="l2" href="#section-14">7. Trick: checklist giấy nhỏ khi scan</a><a class="l2" href="#section-15">8. Workflow đi 2 người</a><a class="l3" href="#section-16">Safety</a><a class="l3" href="#section-17">Economics</a><a class="l2" href="#section-18">9. Cửa xe — giảm thao tác nhưng tùy hoàn cảnh</a><a class="l2" href="#section-19">10. Restroom là hidden cost</a><a class="l2" href="#section-20">11. Customer theo dõi delivery khá kỹ</a><a class="l2" href="#section-21">12. Có thể giao không theo thứ tự Flex</a><a class="l2" href="#section-22">13. Check-in / arrival</a><a class="l2" href="#section-23">14. Block sáng sớm / nửa đêm</a><a class="l2" href="#section-24">15. Pay premium nhỏ có thể là warning sign — VTX2 observation</a><a class="l3" href="#section-25">Observation 1</a><a class="l3" href="#section-26">Observation 2</a><a class="l2" href="#section-27">16. Release blocks — VTX2 manual observations</a><a class="l3" href="#section-28">Pattern ban đầu</a><a class="l3" href="#section-29">Log cụ thể — Wednesday 2026-10-21 → Saturday 2026-10-24</a><a class="l3" href="#section-30">Kết luận hiện tại</a><a class="l2" href="#section-31">17. Houses vs apartment: trade-off thực tế</a><a class="l3" href="#section-32">House-heavy route</a><a class="l3" href="#section-33">Dense apartment route</a><a class="l2" href="#section-34">18. Flex + UberEats phối hợp</a><a class="l2" href="#section-35">19. Flex cho người mới lái xe / mới qua Mỹ</a><a class="l2" href="#section-36">20. Một số nguyên tắc tổng hợp hiện tại</a><a class="l2" href="#section-37">21. Data nên tiếp tục log trong room chung</a><a class="l2" href="#section-38">22. Những hypothesis cần kiểm chứng thêm</a><a class="l3" href="#section-39">H1 — Package count vs route type</a><a class="l3" href="#section-40">H2 — Small premium = difficult route</a><a class="l3" href="#section-41">H3 — 4h premium blocks</a><a class="l3" href="#section-42">H4 — Release windows</a></nav><article><h1 id="section-1">Loki — Amazon Flex Handbook / Handoff</h1>
+<p><strong>Version:</strong> 1.0<br />
+<strong>Last updated:</strong> 2026-10-28<br />
+<strong>Primary station observed:</strong> Carrollton, TX (VTX2) — Sub Same-Day (SSD)</p>
+<blockquote>
+<p>Mục đích file này: chuyển toàn bộ kinh nghiệm thực chiến Amazon Flex sang room thảo luận chung với UberEats.<br />
+Đây không phải tài liệu chính thức của Amazon. Những pattern về route/pay/release time là quan sát cá nhân tại VTX2 và có thể khác station/market/thời điểm.</p>
+</blockquote>
+<hr />
+<h2 id="section-1">1. Bối cảnh &amp; cách đánh giá Flex</h2>
+<p>Không nên đánh giá Flex chỉ bằng <code>$ / scheduled block hour</code>.</p>
+<p>Hai metric thực tế quan trọng hơn:</p>
+<ul>
+<li><strong>$/REAL HOUR</strong> = Flex pay / tổng thời gian thực từ lúc đi làm cho tới khi về nhà.</li>
+<li><strong>$/HOME MILE</strong> = Flex pay / tổng miles <code>Home → Station → toàn route → Home</code>.</li>
+</ul>
+<p>Lý do: Amazon có thể cho finish route sớm nhưng last stop nằm rất xa nhà. Nếu chỉ tính tới lúc giao package cuối thì earnings trông đẹp giả tạo.</p>
+<h3 id="section-2">Case thực tế</h3>
+<h4 id="section-3">Case A — 3h / $60</h4>
+<ul>
+<li>Khoảng 10 packages.</li>
+<li>Delivery xong khoảng 2h.</li>
+<li>Route từ station tới last drop khoảng 45 miles.</li>
+<li>Last drop cách nhà khoảng 35 miles.</li>
+<li>Home → station khoảng 5 miles.</li>
+<li>Tổng round trip nếu về thẳng nhà khoảng <strong>85 miles</strong>.</li>
+<li>Nếu chỉ nhìn delivery: <code>$60 / 2h = $30/h</code>.</li>
+<li>Nhưng tính cả deadhead về nhà thì economics xấu hơn nhiều.</li>
+<li>Có thể bật UberEats để kiếm đơn kéo hướng về nhà, nhưng <strong>UE chỉ nên xem là recovery/bonus</strong>, không dùng để biện hộ cho một Flex route vốn đã dở.</li>
+</ul>
+<h4 id="section-3">Case B — 4.5h / $90</h4>
+<ul>
+<li>45 packages.</li>
+<li>Đa số houses, các stop khá gần nhau.</li>
+<li>First delivery cách Amazon khoảng 24 miles.</li>
+<li>Tổng Home → route → Home khoảng <strong>85 miles</strong>.</li>
+<li>Giao xong khoảng 4h.</li>
+<li>Về tới nhà đúng khoảng 4.5h.</li>
+<li><code>$90 / 4.5h = $20/h gross real</code>.</li>
+<li><code>$90 / 85mi ≈ $1.06/mile gross</code>.</li>
+<li>Dù packages nhiều và mệt vì lên xuống xe liên tục, economics tốt hơn case $60 vì thời gian/miles về nhà đã được hấp thụ trong block.</li>
+</ul>
+<h4 id="section-3">Case C — 4h / $94</h4>
+<ul>
+<li>Route rơi nhiều vào complex apartments ở Richardson.</li>
+<li>Scheduled 4h nhưng thực tế mất khoảng <strong>5h</strong>.</li>
+<li><code>$94 / 5h = $18.80/h gross real</code>.</li>
+<li>Miles thấp hơn house route nhưng rất tốn sức và thời gian.</li>
+<li>Sau route hết lực, về nhà luôn, không chạy UberEats tiếp.</li>
+<li>Đây là ví dụ rõ rằng <strong>$/hour advertised cao hơn chưa chắc route ngon hơn</strong>.</li>
+</ul>
+<h4 id="section-3">Case D — Overbook / no route</h4>
+<p>Sau khi check-in và chờ khoảng nửa tiếng, app hiện:</p>
+<ul>
+<li>“There are no more routes available.”</li>
+<li>“You still receive payment.”</li>
+<li>“You are free to leave now.”</li>
+</ul>
+<p>=&gt; Được release và vẫn nhận full block pay.</p>
+<p><strong>Không được biến “30 phút” thành luật.</strong> Phải ở station và làm theo app cho tới khi chính app release. Giữ screenshot tới khi payment xuất hiện.</p>
+<hr />
+<h2 id="section-3">2. Station gần nhà có lợi rất lớn</h2>
+<p>Nếu các block có pay gần giống nhau, ưu tiên station gần nhà.</p>
+<p>VTX2 cách nhà khoảng 5 miles trong các quan sát ban đầu. 5 miles đi station là dead miles; station càng xa càng tăng cost trước khi route bắt đầu.</p>
+<p>Quan trọng hơn: Flex không cho biết trước last stop sẽ nằm đâu. Station gần nhà giảm ít nhất một phần dead miles chắc chắn.</p>
+<hr />
+<h2 id="section-4">3. Package count không nói hết route ngon/dở</h2>
+<p>Quan sát thực tế:</p>
+<ul>
+<li>Ít packages có thể bị rải rất xa.</li>
+<li>Nhiều packages có thể cluster rất chặt.</li>
+<li>40–45 houses gần nhau có thể dễ chịu hơn 15–20 apartment stops.</li>
+<li>Houses: hao miles/xe hơn nhưng workflow đều.</li>
+<li>Dense apartment: miles thấp nhưng “bullshit factor” cao — gate, parking, entrance, elevator, hallway, mailroom, geofence, access code.</li>
+</ul>
+<h3 id="section-5">Pattern VTX2 đang theo dõi — CHƯA phải rule</h3>
+<p>Với block 4.5h:</p>
+<ul>
+<li>Khoảng hơn 20 packages: có xu hướng route gần hơn nhưng dễ gặp apartments.</li>
+<li>Khoảng 40 packages: có xu hướng đi xa hơn tới delivery zone, nhưng chủ yếu houses/cluster.</li>
+</ul>
+<p>Cần thêm data. Không được nói “Amazon luôn làm vậy”.</p>
+<hr />
+<h2 id="section-6">4. Apartment phải chia loại</h2>
+<p>Không phải apartment nào cũng khó như nhau.</p>
+<h3 id="section-7">Loại tương đối dễ</h3>
+<ul>
+<li>Building nhỏ.</li>
+<li>Khoảng chục units.</li>
+<li>Entrance/building/unit dễ tìm.</li>
+<li>Có thể park gần.</li>
+</ul>
+<h3 id="section-8">Loại khó</h3>
+<ul>
+<li>Complex lớn.</li>
+<li>Một building có rất nhiều units.</li>
+<li>Khó xác định entrance.</li>
+<li>Gate/access code.</li>
+<li>Parking khó.</li>
+<li>Elevator/hallway dài.</li>
+<li>Mailroom/package room khó tìm.</li>
+<li>Sáng sớm 5 AM tìm mailbox/mailroom cực mất thời gian.</li>
+<li>Một stop có thể ăn 10–20 phút.</li>
+</ul>
+<p>Miles của loại route này thường có thể thấp, nhưng time-per-stop và fatigue rất cao.</p>
+<hr />
+<h2 id="section-9">5. Geofence / pin sai ở apartment</h2>
+<p>Đã gặp trường hợp:</p>
+<ul>
+<li>Pin/address trong Flex nằm gần cổng.</li>
+<li>Unit khách nằm sâu bên trong complex.</li>
+<li>App bắt quay lại vùng pin để scan.</li>
+<li>Sau đó chạy vào unit giao + chụp.</li>
+<li>Lại phải quay về gần pin mới submit được.</li>
+</ul>
+<p>Đây là vấn đề geofence/location pin.</p>
+<p>Nếu app cho option kiểu “GPS isn’t working / I’m at the address” thì có thể dùng khi phù hợp. Nếu không, Driver Support có thể cần hỗ trợ. Không nên mặc định chạy qua chạy lại cả complex nếu có cách xử lý đúng trong app.</p>
+<hr />
+<h2 id="section-10">6. Sort packages — quá trình học được sau nhiều route</h2>
+<h3 id="section-11">Cách 1: AAA / BBB / CCC / DDD</h3>
+<p>Packages được chia thành group. Ví dụ 40 packages chia thành 4 group thì mỗi stop chỉ cần tìm trong khoảng 1/4 số hàng.</p>
+<p>Ưu:</p>
+<ul>
+<li>Load nhanh.</li>
+<li>Không phải scan từng package để ghi stop.</li>
+</ul>
+<p>Nhược:</p>
+<ul>
+<li>Tới stop vẫn phải mò trong group.</li>
+</ul>
+<h3 id="section-12">Cách 2: Scan và ghi stop number lên từng package</h3>
+<p>Scan package → app cho biết stop → ghi số lên package.</p>
+<p>Ưu:</p>
+<ul>
+<li>Tới stop lấy hàng cực nhanh.</li>
+<li>Đặc biệt tốt với route nhiều packages.</li>
+</ul>
+<p>Nhược:</p>
+<ul>
+<li>Mất thêm thời gian ở station.</li>
+</ul>
+<h3 id="section-13">Quan điểm sau khi chạy thêm: <strong>scan-all đáng làm</strong></h3>
+<p>Ban đầu ưu tiên load nhanh/rời station nhanh. Sau nhiều route nhận ra scan toàn bộ tại station còn có chức năng <strong>inventory check</strong>, không chỉ sorting.</p>
+<p>Scan-all giúp phát hiện khi còn ở station:</p>
+<ul>
+<li>Missing package.</li>
+<li>Extra package.</li>
+<li>Package rách/bể/móp/chảy.</li>
+<li>Package nào chưa scan.</li>
+<li>Đồng thời lấy stop number để sort.</li>
+</ul>
+<p>=&gt; Tốn thêm thời gian đầu route nhưng giảm rủi ro phát hiện vấn đề khi đã chạy xa station.</p>
+<hr />
+<h2 id="section-14">7. Trick: checklist giấy nhỏ khi scan</h2>
+<p>Làm một miếng giấy ghi các stop number, ví dụ:</p>
+<p><code>2 3 4 5 6 7 8 9 ... 42</code></p>
+<p>Mỗi package scan được:</p>
+<ol>
+<li>App hiện stop number.</li>
+<li>Ghi stop number lên package.</li>
+<li>Cross out số đó trên giấy.</li>
+</ol>
+<p>Sau khi gần scan xong:</p>
+<ul>
+<li>Nhìn giấy biết ngay stop nào chưa scan.</li>
+<li>Không cần nhớ trong đầu.</li>
+<li>Nếu còn 23 và 31 chưa gạch thì tập trung tìm đúng hai package đó.</li>
+<li>Nếu không tìm thấy có thể nghi missing khi vẫn còn ở station.</li>
+</ul>
+<p><strong>Lưu ý:</strong> một stop có thể có nhiều packages. Không được coi “gạch stop” = chắc chắn đủ toàn bộ packages của stop đó nếu app báo stop có &gt;1 kiện.</p>
+<hr />
+<h2 id="section-15">8. Workflow đi 2 người</h2>
+<p>Đi 2 người có lợi thế lớn so với solo.</p>
+<p>Workflow đã dùng:</p>
+<ol>
+<li>Tại station, scan/xác định hàng nặng hoặc lớn trước để không bị chôn.</li>
+<li>Tìm package của first delivery.</li>
+<li>Có thể dùng phone khác để navigation.</li>
+<li>Người thứ hai hỗ trợ scan/sort packages.</li>
+</ol>
+<p>Workflow được điều chỉnh sau khi nhận ra giá trị inventory:</p>
+<ul>
+<li><strong>Nên scan/kiểm toàn bộ packages khi còn ở station.</strong></li>
+<li>Sorting hoàn chỉnh có thể tiếp tục tối ưu sau.</li>
+<li>Ưu tiên đưa 5–15 stops sắp tới ra vị trí dễ lấy.</li>
+</ul>
+<p>Đi 2 người giúp:</p>
+<ul>
+<li>Một người lái/giao.</li>
+<li>Một người chuẩn bị next package.</li>
+<li>Giảm thời gian tìm package tại stop.</li>
+<li>Giữ workflow đều: dừng → lấy đúng hàng → đặt → photo → đi.</li>
+</ul>
+<h3 id="section-16">Safety</h3>
+<p>Không bò/lục cargo khi xe đang chạy. Người ngồi sau vẫn phải ngồi đúng vị trí và thắt seat belt.</p>
+<h3 id="section-17">Economics</h3>
+<p>Nếu người thứ hai đi chỉ để làm Flex thì phải nhớ $90 không phải $90 cho một người-hour. Nếu đi chung vì lý do khác/tiện thì cách đánh giá có thể khác.</p>
+<hr />
+<h2 id="section-18">9. Cửa xe — giảm thao tác nhưng tùy hoàn cảnh</h2>
+<p>Khi đi 2 người, ở stop house an toàn:</p>
+<ul>
+<li>Có thể mở cửa, xuống giao, để cửa mở, quay lại rồi đóng.</li>
+<li>Thay vì mở → đóng → giao → mở → đóng.</li>
+<li>Route 40+ stops giảm đáng kể số lần đóng/mở cửa.</li>
+</ul>
+<p>Nhưng <strong>không phải lúc nào cũng để cửa mở</strong>.</p>
+<p>Phải xét:</p>
+<ul>
+<li>Trời tối.</li>
+<li>Khu vực lạ/nguy hiểm.</li>
+<li>Đậu sát đường.</li>
+<li>Mưa/gió.</li>
+<li>Vị trí parking.</li>
+<li>Người còn lại có trong xe hay không.</li>
+<li>Nóng/lạnh.</li>
+</ul>
+<p>HVAC tradeoff:</p>
+<ul>
+<li>Trời nóng: mở cửa lâu làm thất thoát A/C.</li>
+<li>Trời lạnh: hơi ấm thoát ra/khí lạnh tràn vào.</li>
+</ul>
+<p>Mục tiêu là giảm thao tác vô ích, không hy sinh safety hay comfort.</p>
+<hr />
+<h2 id="section-19">10. Restroom là hidden cost</h2>
+<p>Block 4–4.5h, đặc biệt trời lạnh, dễ phải đi vệ sinh.</p>
+<p>Đang cluster houses mà phải:</p>
+<ul>
+<li>rời route,</li>
+<li>tìm gas station/store,</li>
+<li>đi restroom,</li>
+<li>quay lại route,</li>
+</ul>
+<p>có thể mất 10–15+ phút.</p>
+<p>Kinh nghiệm:</p>
+<ul>
+<li>Đi restroom trước khi rời station nếu có thể.</li>
+<li>Không nên nhịn quá mức chỉ để finish sớm.</li>
+<li>Khi đánh giá “real time” của route, restroom cũng là yếu tố thực tế của công việc.</li>
+</ul>
+<hr />
+<h2 id="section-20">11. Customer theo dõi delivery khá kỹ</h2>
+<p>Sau delivery, customer có thể feedback/đánh giá. Nhiều nhà có Ring/camera.</p>
+<p>Thói quen nên giữ:</p>
+<ul>
+<li>Không quăng package.</li>
+<li>Đặt ngay ngắn.</li>
+<li>Ưu tiên chỗ khô.</li>
+<li>Tránh nơi dễ nhìn từ ngoài đường nếu có chỗ tốt hơn.</li>
+<li>Không chắn cửa mở ra ngoài.</li>
+<li>Photo rõ để khách tìm được.</li>
+</ul>
+<p>Không đáng tiết kiệm vài giây bằng cách làm ẩu rồi đổi lấy complaint/feedback xấu.</p>
+<hr />
+<h2 id="section-21">12. Có thể giao không theo thứ tự Flex</h2>
+<p>Có thể mở Itinerary/Map và chọn stop khác để giao trước, miễn app cho phép và không phá delivery requirements.</p>
+<p>Lý do có thể reorder:</p>
+<ul>
+<li>Muốn last stop nằm gần nhà hơn.</li>
+<li>Giảm deadhead.</li>
+<li>Xử lý business trước giờ đóng.</li>
+<li>Tối ưu route thực tế.</li>
+</ul>
+<p>Nhưng phải để ý:</p>
+<ul>
+<li>Deliver-by/time windows.</li>
+<li>Business closing time.</li>
+<li>Apartment access.</li>
+<li>Không phải lúc nào Amazon sequence cũng tệ.</li>
+<li>Reorder có thể làm stop numbers đã ghi trên package không còn theo thứ tự chạy, nhưng vẫn dùng để identify package.</li>
+</ul>
+<p>Một route dài hơn 5 miles trong phần delivery nhưng giảm 20 miles last-stop→home vẫn có thể lời hơn về tổng trip.</p>
+<hr />
+<h2 id="section-22">13. Check-in / arrival</h2>
+<p>Kinh nghiệm sử dụng:</p>
+<ul>
+<li>Lần đầu tới station nên đi sớm để biết entrance, parking, check-in.</li>
+<li>Sau khi quen, thường tới trước khoảng 5–7 phút là hợp lý, nhưng phải có buffer cho parking/traffic.</li>
+<li>Không nên cố tình nhắm sát late window.</li>
+<li>Check-in đúng hạn không có nghĩa phải lấy hàng/rời station đúng giờ; delay assign route sau khi đã check-in là chuyện khác.</li>
+</ul>
+<hr />
+<h2 id="section-23">14. Block sáng sớm / nửa đêm</h2>
+<p>SSD có thể quăng route xa hoặc semi-rural/rural.</p>
+<p>Rủi ro lúc 3–5 AM:</p>
+<ul>
+<li>County roads tối.</li>
+<li>Deer/động vật.</li>
+<li>Driveway dài.</li>
+<li>Chó.</li>
+<li>House nằm sâu.</li>
+<li>Homeowner không ngờ có người lái vào property lúc 4 AM.</li>
+<li>Apartment/mailroom khó tìm khi trời tối.</li>
+<li>Lạnh/mưa làm route khó chịu hơn.</li>
+</ul>
+<p>Không nên thấy surge rồi mặc định là ngon. Surge có thể chỉ là compensation cho giờ khó chịu/ít driver muốn nhận.</p>
+<p>Nếu location thật sự không an toàn, ưu tiên safety và dùng support/safety flow phù hợp.</p>
+<hr />
+<h2 id="section-24">15. Pay premium nhỏ có thể là warning sign — VTX2 observation</h2>
+<h3 id="section-25">Observation 1</h3>
+<p>Ví dụ:</p>
+<ul>
+<li>3h bình thường khoảng <strong>$70</strong>.</li>
+<li>Tự nhiên xuất hiện 3h <strong>$73–76</strong>.</li>
+</ul>
+<p>Sau vài lần, cảm giác thực tế là những block nhỉnh hơn vài đô có thể đi kèm:</p>
+<ul>
+<li>complex/apartment,</li>
+<li>nhiều packages,</li>
+<li>route khó/tốn time-per-stop.</li>
+</ul>
+<h3 id="section-26">Observation 2</h3>
+<ul>
+<li>4.5h / $90: mức bình thường đã gặp.</li>
+<li>4h / $90 hoặc $94: cần cảnh giác.</li>
+<li>Case 4h/$94 đã rơi vào apartment complex và kéo thành 5h.</li>
+</ul>
+<p><strong>Không khẳng định Amazon cố tình định giá route theo complex.</strong> Chỉ là pattern thực tế đang lặp lại tại VTX2.</p>
+<p>Mental rule:</p>
+<blockquote>
+<p>“Pay nhỉnh hơn bình thường một chút” không tự động = deal ngon. Có thể là warning sign.</p>
+</blockquote>
+<p>Chỉ cần một complex ăn thêm 20 phút thì premium $3–6 gần như vô nghĩa.</p>
+<hr />
+<h2 id="section-27">16. Release blocks — VTX2 manual observations</h2>
+<p>Filter khi quan sát:
+<strong>Chỉ Carrollton TX (VTX2) — Sub Same-Day.</strong></p>
+<h3 id="section-28">Pattern ban đầu</h3>
+<ul>
+<li>Thứ 3 hoặc thứ 4: bắt đầu thấy blocks ngon cho Saturday.</li>
+<li>Khoảng 3–5 PM Thursday: từng quan sát blocks ngon cho Sunday.</li>
+<li>Block ngon thường bị lấy nhanh; vào trễ khoảng nửa tiếng có thể không còn.</li>
+</ul>
+<h3 id="section-29">Log cụ thể — Wednesday 2026-10-21 → Saturday 2026-10-24</h3>
+<ul>
+<li>~<strong>7:55 AM:</strong> nhả vài block sáng sớm Saturday.</li>
+<li>~<strong>10:10 AM:</strong> nhả thêm một ít Saturday.</li>
+<li>~<strong>2:10 PM:</strong> nhả thêm một batch nhỏ.</li>
+<li>~<strong>4:00 PM:</strong> lại nhả thêm ít block.</li>
+</ul>
+<h3 id="section-30">Kết luận hiện tại</h3>
+<p>Amazon có vẻ <strong>drip-feed nhiều batch trong ngày</strong>, không phải chỉ release một lần cố định.</p>
+<p>Vì vậy mục tiêu theo dõi nên chuyển từ:</p>
+<blockquote>
+<p>“Amazon release lúc mấy giờ?”</p>
+</blockquote>
+<p>sang:</p>
+<blockquote>
+<p>“Khung giờ nào thường release <strong>block ngon / duration-pay mình muốn</strong>?”</p>
+</blockquote>
+<p>Chưa đủ data để lập lịch chính xác. Không đáng ngồi refresh app cả ngày nếu pattern giờ/pay không rõ.</p>
+<hr />
+<h2 id="section-31">17. Houses vs apartment: trade-off thực tế</h2>
+<h3 id="section-32">House-heavy route</h3>
+<p>Ưu:</p>
+<ul>
+<li>Stop nhanh.</li>
+<li>Dễ tìm.</li>
+<li>Workflow đều.</li>
+<li>Ít gate/elevator/mailroom.</li>
+</ul>
+<p>Nhược:</p>
+<ul>
+<li>Nhiều lên xuống xe.</li>
+<li>Có thể nhiều miles.</li>
+<li>Mệt thể lực.</li>
+</ul>
+<h3 id="section-33">Dense apartment route</h3>
+<p>Ưu:</p>
+<ul>
+<li>Có thể miles thấp.</li>
+<li>Delivery zone compact.</li>
+</ul>
+<p>Nhược:</p>
+<ul>
+<li>Parking.</li>
+<li>Gate.</li>
+<li>Building entrance.</li>
+<li>Unit search.</li>
+<li>Elevator.</li>
+<li>Mailroom/package room.</li>
+<li>Geofence.</li>
+<li>Access code.</li>
+<li>Time-per-stop rất khó đoán.</li>
+<li>Mệt đầu và có thể làm mất sức cho UberEats sau Flex.</li>
+</ul>
+<p>=&gt; Khi đánh giá route cần 3 nhóm cost:</p>
+<ol>
+<li><strong>Tiền:</strong> $/real hour.</li>
+<li><strong>Xe:</strong> total home-to-home miles.</li>
+<li><strong>Người:</strong> fatigue / “bullshit factor”.</li>
+</ol>
+<hr />
+<h2 id="section-34">18. Flex + UberEats phối hợp</h2>
+<p>Nếu Flex last stop xa nhà:</p>
+<ul>
+<li>Có thể bật UberEats và chỉ nhận đơn tương đối đúng hướng về nhà.</li>
+<li>Mục tiêu là monetize deadhead.</li>
+</ul>
+<p>Nhưng:</p>
+<ul>
+<li>Không được tính trước rằng chắc chắn sẽ có UE order ngon.</li>
+<li>Nếu Flex route cần UE “cứu” mới thành profitable thì bản thân Flex route vẫn không phải route tốt.</li>
+<li>Sau route apartment quá mệt, có thể không còn sức chạy UE — đây cũng là opportunity cost.</li>
+</ul>
+<hr />
+<h2 id="section-35">19. Flex cho người mới lái xe / mới qua Mỹ</h2>
+<p>Delivery có thể giúp người đã lái <strong>đủ an toàn</strong>:</p>
+<ul>
+<li>rành đường,</li>
+<li>quen highway/residential/apartment,</li>
+<li>quen navigation,</li>
+<li>xử lý tình huống nhanh hơn.</li>
+</ul>
+<p>Nhưng delivery <strong>không phải môi trường tốt để học lái từ mức còn thiếu an toàn</strong>.</p>
+<p>Công việc thêm distraction:</p>
+<ul>
+<li>GPS,</li>
+<li>tìm số nhà,</li>
+<li>đổi lane,</li>
+<li>parking,</li>
+<li>app,</li>
+<li>đường lạ,</li>
+<li>trời tối/mưa.</li>
+</ul>
+<p>Một va quẹt/ticket có thể xóa sạch lợi nhuận nhiều tuần/tháng.</p>
+<p>“Lanh lẹ” không có nghĩa chạy liều:</p>
+<ul>
+<li>Lỡ turn → đi tiếp và reroute.</li>
+<li>Không cắt nhiều lanes.</li>
+<li>Không thấy số nhà → vòng lại.</li>
+<li>Không thắng gấp để cứu một turn.</li>
+<li>Không biết entrance → dừng chỗ an toàn rồi xem map.</li>
+</ul>
+<p><strong>Chậm một phút rẻ hơn một cái bumper.</strong></p>
+<hr />
+<h2 id="section-36">20. Một số nguyên tắc tổng hợp hiện tại</h2>
+<ol>
+<li><strong>Đừng nhìn $/scheduled hour một mình.</strong></li>
+<li>Luôn nghĩ tới <strong>last stop → home</strong>.</li>
+<li>Track <strong>home-to-home miles</strong>.</li>
+<li>Nhiều packages chưa chắc xấu; ít packages chưa chắc ngon.</li>
+<li>Apartment count/complexity có thể quan trọng hơn package count.</li>
+<li>Scan-all ở station đáng thời gian vì vừa sort vừa inventory.</li>
+<li>Checklist giấy + cross-out stop number rất hiệu quả.</li>
+<li>Đi 2 người có thể tối ưu mạnh sorting/prep.</li>
+<li>Customer feedback → giao nhanh nhưng đừng làm ẩu.</li>
+<li>Premium nhỏ có thể là warning sign, không phải free money.</li>
+<li>Surge/early-morning pay phải cân với safety/weather/apartment difficulty.</li>
+<li>UberEats có thể monetize đường về nhưng không được coi là guaranteed.</li>
+<li>Release time VTX2 hiện chưa đủ ổn định để “canh đúng một giờ”.</li>
+<li>Phải phân biệt <strong>Amazon/app fact</strong> với <strong>pattern cá nhân tại VTX2</strong>.</li>
+</ol>
+<hr />
+<h2 id="section-37">21. Data nên tiếp tục log trong room chung</h2>
+<p>Cho mỗi Flex block, nếu tiện ghi:</p>
+<ul>
+<li>Date/day of week.</li>
+<li>Station.</li>
+<li>Offer release time (nếu quan sát được).</li>
+<li>Scheduled start/end.</li>
+<li>Scheduled duration.</li>
+<li>Pay.</li>
+<li>Package count.</li>
+<li>Stop count.</li>
+<li>House/apartment/business mix.</li>
+<li>First stop distance from station.</li>
+<li>Last stop distance from home.</li>
+<li>Total home-to-home miles.</li>
+<li>Actual delivery completion time.</li>
+<li>Actual home-return time.</li>
+<li>Weather/time-of-day.</li>
+<li>Route difficulty notes.</li>
+<li>Có chạy UberEats trên đường về không.</li>
+<li>Tổng UE recovery earnings nếu có.</li>
+<li>Fatigue score / có còn sức chạy tiếp không.</li>
+</ul>
+<p>Sau đủ sample có thể tính:</p>
+<ul>
+<li>Expected miles theo block duration.</li>
+<li>Apartment probability theo package count.</li>
+<li>Premium-pay correlation với route difficulty.</li>
+<li>Best release windows.</li>
+<li>Best duration/pay threshold.</li>
+<li>Flex vs UberEats theo real hour + real mile.</li>
+</ul>
+<hr />
+<h2 id="section-38">22. Những hypothesis cần kiểm chứng thêm</h2>
+<h3 id="section-39">H1 — Package count vs route type</h3>
+<p>4.5h + ~20–25 packages → gần/apartment hơn; ~40–45 → xa/houses hơn.</p>
+<h3 id="section-40">H2 — Small premium = difficult route</h3>
+<p>3h base ~$70 nhưng $73–76 → complex/nhiều/khó hơn.</p>
+<h3 id="section-41">H3 — 4h premium blocks</h3>
+<p>4h/$90–94 có khả năng time-per-stop cao hơn 4.5h/$90 bình thường.</p>
+<h3 id="section-42">H4 — Release windows</h3>
+<p>VTX2 release Saturday blocks thành nhiều batch từ Wednesday; cần tìm xem block “ngon” có khung giờ riêng không.</p>
+<p>Không nâng các hypothesis này thành rule cho tới khi có đủ sample.</p>
+<hr />
+<h1 id="section-43">Handoff note cho room UberEats</h1>
+<p>Từ đây nên thảo luận Flex và UberEats như hai phần của cùng một <strong>gig-driving system</strong>.</p>
+<p>Khi so sánh một quyết định:</p>
+<ul>
+<li>Flex có guaranteed block pay nhưng destination/last stop không biết trước.</li>
+<li>UberEats linh hoạt hơn, có thể stop bất cứ lúc nào và dùng để kéo hướng về nhà.</li>
+<li>Flex có thể cluster route tốt nhưng apartment/rural/deadhead tạo variance lớn.</li>
+<li>Mục tiêu không phải tối đa <code>$ advertised/hour</code>, mà tối đa <strong>net value của cả ngày chạy</strong>, bao gồm thời gian, miles, fatigue, weather, safety và khả năng tiếp tục chạy app khác.</li>
+</ul>
+<p><strong>End of Amazon Flex handoff v1.0</strong></p>
+</article></div></body></html>
